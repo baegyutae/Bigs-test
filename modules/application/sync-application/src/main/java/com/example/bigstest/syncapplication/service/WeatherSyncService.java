@@ -41,7 +41,6 @@ public class WeatherSyncService {
     }
 
     private List<WeatherForecast> parseJsonToWeatherForecasts(String json) throws IOException {
-        ObjectMapper objectMapper = new ObjectMapper();
         List<WeatherForecast> forecasts = new ArrayList<>();
         try {
             JsonNode items = objectMapper.readTree(json)
