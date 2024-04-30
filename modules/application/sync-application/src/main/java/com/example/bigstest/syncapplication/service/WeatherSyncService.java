@@ -31,7 +31,7 @@ public class WeatherSyncService {
             List<WeatherForecast> forecasts = parseJsonToWeatherForecasts(jsonResponse);
             if (!forecasts.isEmpty()) {
                 weatherForecastRepository.saveAll(forecasts);
-                System.out.println("데이터베이스에 " + forecasts.size() + " 일기예보를 저장했습니다.");
+                System.out.println("데이터베이스에 " + forecasts.size() + "개의 일기예보를 저장했습니다.");
             } else {
                 System.out.println("저장할 날씨정보를 찾을 수 없습니다.");
             }
