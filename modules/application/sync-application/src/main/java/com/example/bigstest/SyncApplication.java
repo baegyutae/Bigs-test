@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BigsTestApplication {
+public class SyncApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(BigsTestApplication.class, args);
+        SpringApplication.run(SyncApplication.class, args);
     }
 
 }
