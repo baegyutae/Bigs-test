@@ -4,8 +4,7 @@ dependencies {
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     implementation project(':modules:domain:weather-domain')
-    implementation project(':modules:internal:weather-repository')
-    implementation project(':modules:internal:weather-service')
+    implementation project(':modules:internal:weather-internal')
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
