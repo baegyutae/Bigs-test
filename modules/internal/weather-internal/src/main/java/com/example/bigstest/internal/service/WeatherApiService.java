@@ -12,11 +12,15 @@ public class WeatherApiService {
 
     private final RestTemplate restTemplate;
 
+    /***
+     * private이므로 properties에 있는 키를 인식하지 못함
+     * 방법을 찾는 중
+     */
     @Value("${weather.api.baseUrl}")
-    private String baseUrl;
+    String baseUrl;
 
     @Value("${weather.api.key}")
-    private String apiKey;
+    String apiKey;
 
     public String fetchWeatherData(String baseDate, String baseTime, String nx, String ny) {
         String url = UriComponentsBuilder.fromHttpUrl(baseUrl)
