@@ -1,0 +1,17 @@
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    implementation project(':modules:domain:weather-domain')
+    implementation project(':modules:internal:weather-repository')
+    implementation project(':modules:internal:weather-service')
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+bootJar {
+    enabled = true
+    mainClass.set('com.example.weather_forecast.sync.SyncApplication')
+}
+
+jar { enabled = true }
