@@ -1,1 +1,6 @@
 rootProject.name = 'Bigs-test'
+include 'modules:application:sync-application'
+include 'modules:application:inquire-application'
+include 'modules:domain:weather-domain'
+include 'modules:internal:weather-repository'
+include 'modules:internal:weather-service'
