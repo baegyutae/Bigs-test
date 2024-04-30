@@ -21,6 +21,7 @@ public class WeatherSyncService {
 
     private final ObjectMapper objectMapper = new ObjectMapper();
 
+    @Transactional
     public void syncWeatherData() {
         String baseDate = "20240430";
         String baseTime = "0500";
