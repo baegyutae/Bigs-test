@@ -1,6 +1,6 @@
 package com.example.bigstest.domain.service;
 
-import com.example.bigstest.domain.dto.WeatherForecastDto;
+import com.example.bigstest.domain.dto.WeatherForecastResponseDto;
 import com.example.bigstest.domain.entity.WeatherForecast;
 import com.example.bigstest.domain.repository.WeatherForecastRepository;
 import java.util.List;
@@ -21,21 +21,18 @@ public class WeatherForecastService {
     }
 
     @Transactional(readOnly = true)
-    public List<WeatherForecastDto> findAllWeatherForecasts() {
+    public List<WeatherForecastResponseDto> findAllWeatherForecastsDto() {
         return weatherForecastRepository.findAll().stream()
             .map(this::convertToDto)
             .collect(Collectors.toList());
     }
 
-    private WeatherForecastDto convertToDto(WeatherForecast forecast) {
-        return new WeatherForecastDto(
-            forecast.getId(),
-            forecast.getBaseDate(),
-            forecast.getBaseTime(),
-            forecast.getCategory(),
-            forecast.getFcstValue(),
-            forecast.getNx(),
-            forecast.getNy()
+    private WeatherForecastResponseDto convertToDto(WeatherForecast weatherForecast) {
+        return new WeatherForecastResponseDto(
+            weatherForecast.getBaseDate(),
+            weatherForecast.getBaseTime(),
+            weatherForecast.getCategory(),
+            weatherForecast.getFcstValue()
         );
     }
 

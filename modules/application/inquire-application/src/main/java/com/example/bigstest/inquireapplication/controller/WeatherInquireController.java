@@ -1,7 +1,6 @@
 package com.example.bigstest.inquireapplication.controller;
 
-import com.example.bigstest.domain.dto.WeatherForecastDto;
-import com.example.bigstest.domain.entity.WeatherForecast;
+import com.example.bigstest.domain.dto.WeatherForecastResponseDto;
 import com.example.bigstest.domain.service.WeatherForecastService;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
@@ -18,8 +17,8 @@ public class WeatherInquireController {
     private final WeatherForecastService weatherForecastService;
 
     @GetMapping("/forecasts")
-    public ResponseEntity<List<WeatherForecastDto>> getWeatherForecasts() {
-        List<WeatherForecastDto> forecasts = weatherForecastService.findAllWeatherForecasts();
+    public ResponseEntity<List<WeatherForecastResponseDto>> getWeatherForecasts() {
+        List<WeatherForecastResponseDto> forecasts = weatherForecastService.findAllWeatherForecastsDto();
         if (forecasts.isEmpty()) {
             return ResponseEntity.noContent().build();
         }
