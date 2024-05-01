@@ -1,11 +1,8 @@
 package com.example.bigstest.domain.dto;
 
-public record WeatherForecastDto(
-    Long id,
+public record WeatherForecastRequestDto(
     String baseDate,
     String baseTime,
-    String category,
-    String fcstValue,
     String nx,
     String ny
 ) {
