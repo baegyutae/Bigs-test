@@ -24,9 +24,7 @@ public class WeatherSyncService {
     private final ObjectMapper objectMapper = new ObjectMapper();
 
     @Transactional
-    public void syncWeatherData() {
-        String baseDate = "20240430";
-        String baseTime = "0500";
+    public void syncWeatherData(String baseDate, String baseTime) {
         String jsonResponse = weatherApiService.fetchWeatherData(baseDate, baseTime, "62", "130");
 
         try {
